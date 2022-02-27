@@ -18,11 +18,11 @@ while True:
                 print("turned right")
         previous_value = clk.value()   
 
-    if button_pin.value() == False and not button_down:
+    if sw.value() == False and not button_down:
         print("button pushed") 
         button_down = True
-    if button_pin.value() == True and button_down:
+    if sw.value() == True and button_down:
         button_down = False
 
-    if button_pin.value() == False:
+    if sw.value() == False:
         print("button pressed")
