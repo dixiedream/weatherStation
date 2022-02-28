@@ -26,17 +26,15 @@ import dht
 tSensor = dht.DHT11(Pin(TEMP_OUT))
 
 def printTemp():
+    tSensor.measure()
     lcd.clear()
     lcd.move_to(0, 0)
     tempMsg = "Temp: {}C"
-    print(tSensor.temperature())
     lcd.putstr(tempMsg.format(tSensor.temperature()))
     lcd.move_to(0, 1)
     humMsg = "Humidity: {}%"
-    print(tSensor.humidity())
     lcd.putstr(humMsg.format(tSensor.humidity()))
     
-# while True:
-    lcd.clear()
-    # printTemp()
-    # time.sleep(5)
+while True:
+    printTemp()
+    time.sleep(5)
