@@ -1,4 +1,5 @@
 import time
+import uasyncio
 from machine import I2C, Pin
 
 # PINS DEFINITIONS
